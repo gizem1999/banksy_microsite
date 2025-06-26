@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+
+    <head> 
+          <meta name="viewport" content="width=device-width; user-scalable=1" />
+          <meta charset="utf-8">
+          <title>Portfolio</title>  
+          <link rel="stylesheet" href="../Design/style.css">
+		 
+	</head>
+	
+	<body> 
+		
+		  <nav class="navbar">
+		     <div class="max-width">
+			   <div class="logo"><a onclick="closeDropdown()" href="#">Portfolio</a></div>
+			      
+	        <ul id="menuepunkte">
+		       <li class="menuepunkte"><a href="../index.html">Home</a></li>
+		       <li class="menuepunkte"><a href="#about">About</a></li>
+		       <li class="menuepunkte"><a href="#portfolio">Portfolio</a></li>
+		       <li class="menuepunkte"><a href="#contact">Contact</a></li>
+		       <a  href="datenschutz.html" ></a>
+		       <a class="currentSite" href="impressum.html" ></a>
+			</ul>
+			
+			<button onclick="openDropdown()" id="dropdownButton">
+				<div class="line"></div>
+			    <div class="line"></div>
+			    <div class="line"></div>
+			</button>
+		 </div>
+		 <div id="dropdownMenue">
+		 
+		 <ul id="menuepunkteDropdown">
+		       <li class="menuepunkte"><a onclick="closeDropdown()" href="#">Home</a></li>
+		       <li class="menuepunkte"><a onclick="closeDropdown()" href="#about">About</a></li>
+		       <li class="menuepunkte"><a onclick="closeDropdown()" href="#portfolio">Portfolio</a></li>
+		       <li class="menuepunkte"><a onclick="closeDropdown()" href="#contact">Contact</a></li>
+			</ul>
+		 </div>
+		 
+	    </nav> 
+		
+	    <script>
+		
+		
+	       function checkWidth(x) {
+		      if (x.matches) {
+			  //display sandwich menue
+				document.getElementById("dropdownButton").style.display = 'block';
+				document.getElementById("menuepunkte").style.display = 'none';
+				document.getElementById("dropdownMenue").style.display = 'none';
+			  } else {
+			  //display menuepoints
+				document.getElementById("dropdownButton").style.display = 'none';
+				document.getElementById("dropdownMenue").style.display = 'none';
+				document.getElementById("menuepunkte").style.display = 'block';
+			  }
+			  
+			 }
+			 isDropdownOpen = false;
+			 function openDropdown(){
+				console.log("hallo button");
+
+				if(isDropdownOpen){
+					document.getElementById("dropdownMenue").style.display = 'none';
+				}
+				else{
+					document.getElementById("dropdownMenue").style.display = 'block';
+				}
+				
+				isDropdownOpen = !isDropdownOpen;
+			 }
+			 
+			 var x = window.matchMedia("(max-width: 750px)");
+			 checkWidth(x);
+			 x.addListener(checkWidth);
+			 
+			 function closeDropdown(){
+				document.getElementById("dropdownMenue").style.display = 'none';
+			 }
+			 
+			 
+			   
+	          
+	   </script>
+
+
+
+
+
+
+    <div class=impressum>
+	
+      <h1>Impressum</h1>
+	  
+          <p>Angaben gemäß § 5 TMG</p>
+          <p>Max Muster <br> 
+             Musterweg<br> 
+             12345 Musterstadt <br>
+		  </p> 
+		  
+          <p><strong>Vertreten durch: </strong><br>
+                     Max Muster<br>
+          </p>
+		  
+          <p><strong>Kontakt:</strong> <br>
+                     Telefon: 01234-789456<br>
+                     Fax: 1234-56789<br>
+                     E-Mail: <a href='mailto:max@muster.de'>max@muster.de</a></br>
+		 </p>	
+		 
+		<p><strong>Umsatzsteuer-ID: </strong> <br>
+                   Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz: Musterustid.<br><br>
+           <strong>Wirtschafts-ID: </strong><br>
+                   Musterwirtschaftsid<br>
+        </p>
+		
+        <p><strong>Aufsichtsbehörde:</strong><br>
+                   Musteraufsicht Musterstadt<br>
+		</p>  
+		
+		   <!-- Impressum kopiert von: https://www.impressum-generator.de/ --> 
+		
+    </div>
+ 
+    <footer>
+	      <a href="datenschutz.html" >Datenschutz</a>
+		  <a href="./impressum.html" >Impressum</a>
+	</footer>
+ 
+ 
+ 
+ 
+ </body>
+ 
+ 
+ </html>
